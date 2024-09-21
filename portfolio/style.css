@@ -1,0 +1,184 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.layout {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    gap: 8px;
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+    position: relative;
+    height: 250px;
+    background-image: url('img2.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.text {
+    color: white;
+    position: relative;
+    z-index: 2;
+    padding-top: 100px;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    font-family: "Gill Sans MT", Calibri, sans-serif;
+    font-size: 20px;
+    margin: 20;
+    padding: 20;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: mediumpurple;
+    position: relative; /* Set position to relative */
+    z-index: 3; /* Ensure navbar is above header */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 1 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(98, 19, 91, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: mediumpurple;
+        width: 100%;
+        z-index: 4; /* Ensure dropdown menu is above other content */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+.main {
+    margin-top: 20px;
+}
+
+#bio {
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#skills {
+    background-color: #1a1a1a; /* Dark background for skills section */
+    padding: 20px; /* Padding for space inside the section */
+    border-radius: 8px; /* Rounded corners */
+    color: #D3D3D3; /* Light gray color for content */
+    margin-bottom: 20px; /* Space below skills section */
+}
+
+.skills-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.skills-list li {
+    margin: 10px 0; /* Space between list items */
+    font-size: 18px; /* Font size for skills */
+}
+
+.bio-title {
+    color: #FFFFFF; /* White color for title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.bio-content {
+    color: #D3D3D3; /* Light gray color for content */
+    line-height: 1.5; /* Better line spacing */
+}
+
+/* Qualifications Section */
+#qualifications {
+    background-color: #1a1a1a; /* Dark background for qualifications section */
+    padding: 20px; /* Padding for space inside the section */
+    border-radius: 8px; /* Rounded corners */
+    color: #D3D3D3; /* Light gray color for content */
+}
+
+/* Hobbies Section */
+#hobbies {
+    background-image: url('sai3.jpg'); /* Background image for hobbies section */
+    background-size: cover; /* Cover ensures the image fills the area */
+    background-position: center; /* Center the image */
+    opacity: 0.8; /* Similar opacity to header */
+    padding: 20px; /* Padding for space inside the section */
+    border-radius: 8px; /* Rounded corners */
+    color: white; /* White
